@@ -43,6 +43,12 @@ public class Module {
     }
     
     public void setAssociatedCourse(CourseProgramme course) {
+        // register students of this module for the course if they're not already registered
+        for (Student student : this.students) {
+            if (course.getStudents().indexOf(student) < 0) {
+                course.register(student);
+            }
+        }
         this.associatedCourses.add(course);
     }
 }
