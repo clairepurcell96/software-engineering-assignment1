@@ -1,0 +1,23 @@
+language: java
+jdk:
+  - 1.8
+branches:
+  only:
+    - master
+build:
+  on_success:
+    - mvn clean cobertura:cobertura
+    - mvn test
+integrations:
+  notifications:
+    - integrationName: email
+      type: email
+      recipients:
+        - c.purcell5@nuigalway.ie
+      branches:
+        only:
+          - master
+      on_success: change
+      on_failure: change
+      sendConsoleLogs: true
+      sendFailingSnippet: true
