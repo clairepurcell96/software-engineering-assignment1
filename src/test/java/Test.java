@@ -55,7 +55,7 @@ public class Test {
     public void registerModuleAndGetStudents() {
         // this test covers both Module.getStudents and Module.register
         Student student = new Student("Claire Purcell", 20, new DateTime(1998, 9, 1, 9, 0), "12345678");
-        Module module = new Module("Module 1", "CT1234");
+        CollegeModule module = new CollegeModule("Module 1", "CT1234");
         module.register(student);
         ArrayList<Student> expected = new ArrayList<Student>();
         expected.add(student);
@@ -65,7 +65,7 @@ public class Test {
     @org.junit.Test
     public void deregisterModule() {
         Student student = new Student("Claire Purcell", 20, new DateTime(1998, 9, 1, 9, 0), "12345678");
-        Module module = new Module("Module 1", "CT1234");
+        CollegeModule module = new CollegeModule("Module 1", "CT1234");
         module.register(student);
         module.deregister(student);
         ArrayList<Student> expected = new ArrayList<Student>();
@@ -75,7 +75,7 @@ public class Test {
     @org.junit.Test
     public void getAndSetAssociatedCourses() {
         // this test covers both getting and setting associated courses
-        Module module = new Module("Module 1", "CT1234");
+        CollegeModule module = new CollegeModule("Module 1", "CT1234");
         CourseProgramme course = new CourseProgramme("Course 1", new DateTime(2018, 9, 1, 9, 0), new DateTime(2019, 4, 1, 18, 0));
         module.setAssociatedCourse(course);
         ArrayList<CourseProgramme> expected = new ArrayList<CourseProgramme>();
@@ -111,10 +111,10 @@ public class Test {
     
     @org.junit.Test
     public void addModuleAndGetCourseModules() {
-        Module module = new Module("Module 1", "CT1234");
+        CollegeModule module = new CollegeModule("Module 1", "CT1234");
         CourseProgramme course = new CourseProgramme("Course 1", new DateTime(2018, 9, 1, 9, 0), new DateTime(2019, 4, 1, 18, 0));
         course.addModule(module);
-        ArrayList<Module> expected = new ArrayList<Module>();
+        ArrayList<CollegeModule> expected = new ArrayList<CollegeModule>();
         expected.add(module);
         assertEquals(course.getModules(), expected);
     }

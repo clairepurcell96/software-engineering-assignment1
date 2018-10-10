@@ -14,7 +14,7 @@ import org.joda.time.DateTime;
  */
 public class CourseProgramme {
     private final String courseName;
-    private ArrayList<Module> modules = new ArrayList<Module>();
+    private ArrayList<CollegeModule> modules = new ArrayList<CollegeModule>();
     private ArrayList<Student> students = new ArrayList<Student>();
     private final DateTime startDate;
     private final DateTime endDate;
@@ -37,11 +37,11 @@ public class CourseProgramme {
         this.students.remove(this.students.indexOf(student));
     }
     
-    public void addModule(Module module) {
+    public void addModule(CollegeModule module) {
         this.modules.add(module);
     }
     
-    public ArrayList<Module> getModules() {
+    public ArrayList<CollegeModule> getModules() {
         return this.modules;
     }
        
