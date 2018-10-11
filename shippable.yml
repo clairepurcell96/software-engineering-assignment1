@@ -6,7 +6,7 @@ branches:
     - master
 build:
   on_success:
-    - mvn clean cobertura:cobertura
+    - mvn clean
     - mvn test
 integrations:
   notifications:
